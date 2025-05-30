@@ -12,11 +12,11 @@ interface InventoryTrackingStepProps {
 
 const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTrackingStepProps) => {
   const options = [
-    { id: "none", label: "We don't (starting from scratch)", description: "Perfect! We'll help you set up everything from the beginning" },
-    { id: "spreadsheets", label: "Spreadsheets", description: "We'll show you how much time you can save with automation" },
-    { id: "quickbooks", label: "QuickBooks", description: "Great! We have seamless QuickBooks integration" },
-    { id: "other_tool", label: "Another inventory tool", description: "We can help you migrate your existing data" },
-    { id: "fishbowl", label: "Fishbowl Classic / other ERPs", description: "We specialize in upgrading from legacy systems" },
+    { id: "none", label: "We don't track inventory yet", description: "Perfect. We'll build your system from the ground up." },
+    { id: "spreadsheets", label: "Spreadsheets", description: "Time to eliminate manual errors and save hours each week." },
+    { id: "quickbooks", label: "QuickBooks", description: "Excellent. We'll sync seamlessly with your existing setup." },
+    { id: "other_tool", label: "Another inventory tool", description: "We'll help you migrate and upgrade your workflow." },
+    { id: "fishbowl", label: "Fishbowl Classic or other ERP", description: "Ready to modernize? We specialize in smooth transitions." },
   ];
 
   const handleSelect = (optionId: string) => {
@@ -28,8 +28,8 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-slate-900">How do you currently track inventory?</h2>
-        <p className="text-slate-600">This helps us understand your current setup and pain points</p>
+        <h2 className="text-2xl font-bold text-slate-900">How do you track inventory now?</h2>
+        <p className="text-slate-600">Don't worry—we'll work with what you have and eliminate the pain points.</p>
       </div>
 
       <div className="space-y-3">
@@ -70,7 +70,7 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
           disabled={!canProceed}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
         >
-          Continue
+          Set Up My System
           <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       </div>

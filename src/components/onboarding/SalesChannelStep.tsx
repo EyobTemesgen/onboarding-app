@@ -13,12 +13,12 @@ interface SalesChannelStepProps {
 
 const SalesChannelStep = ({ data, updateData, onNext, onPrev }: SalesChannelStepProps) => {
   const options = [
-    { id: "ecommerce", label: "Shopify or other ecommerce site", description: "Online stores and platforms" },
-    { id: "marketplaces", label: "Amazon, Walmart, or other marketplaces", description: "Third-party selling platforms" },
-    { id: "b2b", label: "B2B (email, phone, portal orders)", description: "Business-to-business sales" },
-    { id: "manual", label: "Manual orders (trade shows, spreadsheets)", description: "Traditional order processing" },
-    { id: "retail", label: "Retail or POS", description: "Point of sale systems" },
-    { id: "not_selling", label: "Not selling yet", description: "Planning to start selling" },
+    { id: "ecommerce", label: "Shopify or other ecommerce site", description: "We'll sync your online store automatically" },
+    { id: "marketplaces", label: "Amazon, Walmart, or other marketplaces", description: "Connect and control pricing across platforms" },
+    { id: "b2b", label: "B2B (email, phone, portal orders)", description: "Streamline wholesale and direct sales" },
+    { id: "manual", label: "Manual orders (trade shows, spreadsheets)", description: "Digitize and automate your current process" },
+    { id: "retail", label: "Retail or POS", description: "Sync in-store and online inventory" },
+    { id: "not_selling", label: "Not selling yet", description: "We'll prepare you for launch day" },
   ];
 
   const handleToggle = (optionId: string) => {
@@ -35,8 +35,8 @@ const SalesChannelStep = ({ data, updateData, onNext, onPrev }: SalesChannelStep
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-slate-900">How do you sell your products today?</h2>
-        <p className="text-slate-600">Select all that apply - this helps us customize your setup</p>
+        <h2 className="text-2xl font-bold text-slate-900">Where do you sell today?</h2>
+        <p className="text-slate-600">Select all that apply. We'll configure the right integrations to centralize your operations.</p>
       </div>
 
       <div className="space-y-3">
@@ -73,7 +73,7 @@ const SalesChannelStep = ({ data, updateData, onNext, onPrev }: SalesChannelStep
           disabled={!canProceed}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
         >
-          Continue
+          Sync My Channels
           <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       </div>

@@ -14,22 +14,22 @@ const BundledProductsStep = ({ data, updateData, onNext, onPrev }: BundledProduc
   const options = [
     { 
       id: "yes", 
-      label: "Yes", 
-      description: "We'll show you our powerful kitting and assembly features",
+      label: "Yes, we create bundles or kits", 
+      description: "We'll show you our powerful kitting features that track components automatically.",
       icon: Package,
       color: "emerald"
     },
     { 
       id: "no", 
-      label: "No", 
-      description: "Perfect! We'll focus on individual product inventory management",
+      label: "No, we sell individual products", 
+      description: "Perfect. We'll focus on streamlined single-item inventory management.",
       icon: Wrench,
       color: "sky"
     },
     { 
       id: "not_sure", 
-      label: "Not sure", 
-      description: "No worries! We'll help you identify opportunities during setup",
+      label: "Not sure yet", 
+      description: "No problem. We'll help you identify opportunities during setup.",
       icon: HelpCircle,
       color: "violet"
     },
@@ -44,8 +44,8 @@ const BundledProductsStep = ({ data, updateData, onNext, onPrev }: BundledProduc
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-slate-900">Do you sell products that are bundled or assembled from parts?</h2>
-        <p className="text-slate-600">This includes kits, bundles, or any products made from multiple components</p>
+        <h2 className="text-2xl font-bold text-slate-900">Do you sell kits or bundled products?</h2>
+        <p className="text-slate-600">This includes any products made from multiple components or sold as sets.</p>
       </div>
 
       <div className="space-y-3">
@@ -110,7 +110,7 @@ const BundledProductsStep = ({ data, updateData, onNext, onPrev }: BundledProduc
           disabled={!canProceed}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
         >
-          Continue
+          Configure Products
           <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       </div>

@@ -14,11 +14,11 @@ const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           <Package className="w-8 h-8 text-white" />
         </div>
         <h1 className="text-3xl font-bold text-slate-900">
-          Welcome to InventoryPro
+          Welcome to Drive – Smarter Inventory Starts Here
         </h1>
         <p className="text-lg text-slate-600 max-w-md mx-auto">
-          Let's set up your inventory management system in just a few minutes. 
-          We'll customize your experience based on how your business operates.
+          Get multi-channel control, real-time sync, and workflow automation 
+          up and running in minutes. Your growing business deserves modern inventory management.
         </p>
       </div>
 
@@ -27,24 +27,24 @@ const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto">
             <TrendingUp className="w-6 h-6 text-emerald-600" />
           </div>
-          <h3 className="font-semibold text-slate-900">Increase Efficiency</h3>
-          <p className="text-sm text-slate-600">Automate inventory tracking and reduce manual errors</p>
+          <h3 className="font-semibold text-slate-900">Multi-Channel Control</h3>
+          <p className="text-sm text-slate-600">Sync inventory across all your sales channels automatically</p>
         </div>
         
         <div className="text-center space-y-3">
           <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mx-auto">
             <Zap className="w-6 h-6 text-sky-600" />
           </div>
-          <h3 className="font-semibold text-slate-900">Real-time Insights</h3>
-          <p className="text-sm text-slate-600">Get instant visibility into your stock levels and sales</p>
+          <h3 className="font-semibold text-slate-900">Real-Time Sync</h3>
+          <p className="text-sm text-slate-600">Never oversell again with instant inventory updates</p>
         </div>
         
         <div className="text-center space-y-3">
           <div className="w-12 h-12 bg-violet-100 rounded-full flex items-center justify-center mx-auto">
             <Package className="w-6 h-6 text-violet-600" />
           </div>
-          <h3 className="font-semibold text-slate-900">Scale Seamlessly</h3>
-          <p className="text-sm text-slate-600">Grow your business with integrations and automation</p>
+          <h3 className="font-semibold text-slate-900">Workflow Automation</h3>
+          <p className="text-sm text-slate-600">Streamline operations from order to fulfillment</p>
         </div>
       </div>
 
@@ -54,11 +54,11 @@ const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-3 text-lg shadow-lg"
           size="lg"
         >
-          Get Started
+          Let's Go
           <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
         <p className="text-sm text-slate-500">
-          Takes about 3 minutes • No credit card required
+          Takes 3 minutes • Set up your first win fast
         </p>
       </div>
     </div>

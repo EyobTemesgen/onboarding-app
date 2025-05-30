@@ -15,7 +15,7 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
     { 
       id: "online", 
       label: "Yes: QuickBooks Online", 
-      description: "Perfect! We have seamless real-time sync with QuickBooks Online",
+      description: "Excellent. We'll sync seamlessly with real-time financial data.",
       icon: Monitor,
       color: "green",
       highlight: true
@@ -23,21 +23,21 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
     { 
       id: "desktop", 
       label: "Yes: QuickBooks Desktop", 
-      description: "We can work with Desktop, though with some limitations. Let's discuss options.",
+      description: "We can work with Desktop. Let's discuss the best integration approach.",
       icon: HardDrive,
       color: "orange"
     },
     { 
       id: "no", 
-      label: "No", 
-      description: "No problem! We'll show you our built-in financial reporting features",
+      label: "No accounting software yet", 
+      description: "Perfect. We'll show you our built-in financial reporting features.",
       icon: X,
       color: "blue"
     },
     { 
       id: "planning", 
       label: "Planning to use QuickBooks", 
-      description: "Great! We'll help you set up the integration when you're ready",
+      description: "Smart choice. We'll set up the integration when you're ready.",
       icon: Calendar,
       color: "purple"
     },
@@ -53,7 +53,7 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
     <div className="space-y-6">
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold text-gray-900">Do you use QuickBooks for accounting?</h2>
-        <p className="text-gray-600">This helps us configure the right financial integrations for your business</p>
+        <p className="text-gray-600">We'll configure the right financial sync to keep everything connected.</p>
       </div>
 
       <div className="space-y-3">
@@ -71,7 +71,7 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
             >
               {option.highlight && (
                 <div className="absolute -top-2 left-4 bg-green-500 text-white text-xs px-2 py-1 rounded">
-                  Recommended
+                  Most Popular
                 </div>
               )}
               <div className="flex items-start space-x-4">

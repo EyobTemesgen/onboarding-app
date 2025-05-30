@@ -14,29 +14,29 @@ const ShippingLocationStep = ({ data, updateData, onNext, onPrev }: ShippingLoca
   const options = [
     { 
       id: "one_location", 
-      label: "One location (in-house)", 
-      description: "Simple setup with warehouse management and shipping integrations",
+      label: "One location", 
+      description: "We'll set up streamlined warehouse management and shipping integrations.",
       icon: Home,
       color: "sky"
     },
     { 
       id: "multiple_warehouses", 
-      label: "Multiple in-house warehouses", 
-      description: "Advanced multi-location inventory tracking and allocation",
+      label: "Multiple warehouses", 
+      description: "Advanced multi-location tracking with smart allocation rules.",
       icon: Building2,
       color: "emerald"
     },
     { 
       id: "third_party", 
-      label: "3PL or Fulfilled by Amazon (FBA)", 
-      description: "Seamless integration with third-party logistics providers",
+      label: "3PL or Amazon FBA", 
+      description: "Seamless integration with third-party logistics providers.",
       icon: Truck,
       color: "violet"
     },
     { 
       id: "not_shipping", 
       label: "Not shipping yet", 
-      description: "We'll help you prepare for when you're ready to start fulfillment",
+      description: "We'll prepare your fulfillment setup for when you're ready to launch.",
       icon: Clock,
       color: "amber"
     },
@@ -51,8 +51,8 @@ const ShippingLocationStep = ({ data, updateData, onNext, onPrev }: ShippingLoca
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-slate-900">Where do you ship from?</h2>
-        <p className="text-slate-600">This helps us configure the right fulfillment features for your business</p>
+        <h2 className="text-2xl font-bold text-slate-900">Where do you fulfill orders?</h2>
+        <p className="text-slate-600">We'll configure the right fulfillment workflow for your operations.</p>
       </div>
 
       <div className="space-y-3">
@@ -121,7 +121,7 @@ const ShippingLocationStep = ({ data, updateData, onNext, onPrev }: ShippingLoca
           disabled={!canProceed}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
         >
-          Continue
+          Set Up Fulfillment
           <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       </div>
