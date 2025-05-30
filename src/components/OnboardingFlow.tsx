@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -8,6 +7,7 @@ import InventoryTrackingStep from "./onboarding/InventoryTrackingStep";
 import BundledProductsStep from "./onboarding/BundledProductsStep";
 import ShippingLocationStep from "./onboarding/ShippingLocationStep";
 import QuickBooksStep from "./onboarding/QuickBooksStep";
+import ProductImportStep from "./onboarding/ProductImportStep";
 import OnboardingComplete from "./onboarding/OnboardingComplete";
 
 export interface OnboardingData {
@@ -16,6 +16,7 @@ export interface OnboardingData {
   bundledProducts: string;
   shippingLocation: string;
   quickBooks: string;
+  productImport: string;
 }
 
 const OnboardingFlow = () => {
@@ -26,9 +27,10 @@ const OnboardingFlow = () => {
     bundledProducts: "",
     shippingLocation: "",
     quickBooks: "",
+    productImport: "",
   });
 
-  const totalSteps = 6;
+  const totalSteps = 7;
   const progress = (currentStep / totalSteps) * 100;
 
   const nextStep = () => {
@@ -100,6 +102,15 @@ const OnboardingFlow = () => {
           />
         );
       case 6:
+        return (
+          <ProductImportStep
+            data={onboardingData}
+            updateData={updateData}
+            onNext={nextStep}
+            onPrev={prevStep}
+          />
+        );
+      case 7:
         return <OnboardingComplete data={onboardingData} />;
       default:
         return <WelcomeStep onNext={nextStep} />;
