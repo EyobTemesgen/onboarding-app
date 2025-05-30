@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { OnboardingData } from "../OnboardingFlow";
 
@@ -32,33 +34,24 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
         <p className="text-slate-600">Don't worry—we'll work with what you have and eliminate the pain points.</p>
       </div>
 
-      <div className="space-y-3">
+      <RadioGroup value={data.inventoryTracking} onValueChange={handleSelect} className="space-y-3">
         {options.map((option) => (
           <div
             key={option.id}
             className={`border rounded-lg p-4 cursor-pointer transition-all hover:bg-slate-50 ${
               data.inventoryTracking === option.id ? "border-blue-500 bg-blue-50/50" : "border-slate-200"
             }`}
-            onClick={() => handleSelect(option.id)}
           >
             <div className="flex items-start space-x-3">
-              <div className={`w-4 h-4 rounded-full border-2 mt-1 transition-all ${
-                data.inventoryTracking === option.id 
-                  ? "border-blue-500 bg-blue-500" 
-                  : "border-slate-300"
-              }`}>
-                {data.inventoryTracking === option.id && (
-                  <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>
-                )}
-              </div>
-              <div className="flex-1">
+              <RadioGroupItem value={option.id} id={option.id} className="mt-1" />
+              <Label htmlFor={option.id} className="flex-1 cursor-pointer">
                 <h3 className="font-medium text-slate-900">{option.label}</h3>
                 <p className="text-sm text-slate-600">{option.description}</p>
-              </div>
+              </Label>
             </div>
           </div>
         ))}
-      </div>
+      </RadioGroup>
 
       <div className="flex justify-between pt-6">
         <Button variant="outline" onClick={onPrev} className="border-slate-300 text-slate-700 hover:bg-slate-50">

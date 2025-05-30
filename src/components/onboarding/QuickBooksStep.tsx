@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { ArrowRight, ArrowLeft, Monitor, HardDrive, X, Calendar } from "lucide-react";
 import { OnboardingData } from "../OnboardingFlow";
 
@@ -56,7 +58,7 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
         <p className="text-gray-600">We'll configure the right financial sync to keep everything connected.</p>
       </div>
 
-      <div className="space-y-3">
+      <RadioGroup value={data.quickBooks} onValueChange={handleSelect} className="space-y-3">
         {options.map((option) => {
           const IconComponent = option.icon;
           const isSelected = data.quickBooks === option.id;
@@ -67,7 +69,6 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
               className={`border rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-50 relative ${
                 isSelected ? "border-blue-500 bg-blue-50" : "border-gray-200"
               } ${option.highlight ? "ring-2 ring-green-200" : ""}`}
-              onClick={() => handleSelect(option.id)}
             >
               {option.highlight && (
                 <div className="absolute -top-2 left-4 bg-green-500 text-white text-xs px-2 py-1 rounded">
@@ -99,23 +100,17 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
                   }`} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">{option.label}</h3>
-                  <p className="text-gray-600">{option.description}</p>
+                  <Label htmlFor={option.id} className="cursor-pointer">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{option.label}</h3>
+                    <p className="text-gray-600">{option.description}</p>
+                  </Label>
                 </div>
-                <div className={`w-5 h-5 rounded-full border-2 transition-all ${
-                  isSelected 
-                    ? "border-blue-500 bg-blue-500" 
-                    : "border-gray-300"
-                }`}>
-                  {isSelected && (
-                    <div className="w-1.5 h-1.5 bg-white rounded-full m-1"></div>
-                  )}
-                </div>
+                <RadioGroupItem value={option.id} id={option.id} />
               </div>
             </div>
           );
         })}
-      </div>
+      </RadioGroup>
 
       <div className="flex justify-between pt-6">
         <Button variant="outline" onClick={onPrev}>
