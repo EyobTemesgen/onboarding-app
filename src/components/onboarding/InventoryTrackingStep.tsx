@@ -28,16 +28,16 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-gray-900">How do you currently track inventory?</h2>
-        <p className="text-gray-600">This helps us understand your current setup and pain points</p>
+        <h2 className="text-2xl font-bold text-slate-900">How do you currently track inventory?</h2>
+        <p className="text-slate-600">This helps us understand your current setup and pain points</p>
       </div>
 
       <div className="space-y-3">
         {options.map((option) => (
           <div
             key={option.id}
-            className={`border rounded-lg p-4 cursor-pointer transition-all hover:bg-gray-50 ${
-              data.inventoryTracking === option.id ? "border-blue-500 bg-blue-50" : "border-gray-200"
+            className={`border rounded-lg p-4 cursor-pointer transition-all hover:bg-slate-50 ${
+              data.inventoryTracking === option.id ? "border-blue-500 bg-blue-50/50" : "border-slate-200"
             }`}
             onClick={() => handleSelect(option.id)}
           >
@@ -45,15 +45,15 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
               <div className={`w-4 h-4 rounded-full border-2 mt-1 transition-all ${
                 data.inventoryTracking === option.id 
                   ? "border-blue-500 bg-blue-500" 
-                  : "border-gray-300"
+                  : "border-slate-300"
               }`}>
                 {data.inventoryTracking === option.id && (
                   <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>
                 )}
               </div>
               <div className="flex-1">
-                <h3 className="font-medium text-gray-900">{option.label}</h3>
-                <p className="text-sm text-gray-600">{option.description}</p>
+                <h3 className="font-medium text-slate-900">{option.label}</h3>
+                <p className="text-sm text-slate-600">{option.description}</p>
               </div>
             </div>
           </div>
@@ -61,14 +61,14 @@ const InventoryTrackingStep = ({ data, updateData, onNext, onPrev }: InventoryTr
       </div>
 
       <div className="flex justify-between pt-6">
-        <Button variant="outline" onClick={onPrev}>
+        <Button variant="outline" onClick={onPrev} className="border-slate-300 text-slate-700 hover:bg-slate-50">
           <ArrowLeft className="mr-2 w-4 h-4" />
           Back
         </Button>
         <Button 
           onClick={onNext} 
           disabled={!canProceed}
-          className="bg-blue-600 hover:bg-blue-700"
+          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
         >
           Continue
           <ArrowRight className="ml-2 w-4 h-4" />

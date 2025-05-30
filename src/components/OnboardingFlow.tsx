@@ -107,21 +107,21 @@ const OnboardingFlow = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl">
         {currentStep > 0 && currentStep <= totalSteps - 1 && (
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-sm font-medium text-slate-700">
                 Step {currentStep} of {totalSteps - 1}
               </span>
-              <span className="text-sm text-gray-500">{Math.round(progress)}% complete</span>
+              <span className="text-sm text-slate-600">{Math.round(progress)}% complete</span>
             </div>
             <Progress value={progress} className="h-2" />
           </div>
         )}
         
-        <Card className="p-8 shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <Card className="p-8 shadow-xl border-0 bg-white/90 backdrop-blur-sm">
           {renderStep()}
         </Card>
       </div>
