@@ -1,10 +1,10 @@
+
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import WelcomeStep from "./onboarding/WelcomeStep";
 import SalesChannelStep from "./onboarding/SalesChannelStep";
 import InventoryTrackingStep from "./onboarding/InventoryTrackingStep";
-import BundledProductsStep from "./onboarding/BundledProductsStep";
 import ShippingLocationStep from "./onboarding/ShippingLocationStep";
 import QuickBooksStep from "./onboarding/QuickBooksStep";
 import ProductImportStep from "./onboarding/ProductImportStep";
@@ -13,7 +13,6 @@ import OnboardingComplete from "./onboarding/OnboardingComplete";
 export interface OnboardingData {
   salesChannels: string[];
   inventoryTracking: string;
-  bundledProducts: string;
   shippingLocation: string;
   quickBooks: string;
   productImport: string;
@@ -24,13 +23,12 @@ const OnboardingFlow = () => {
   const [onboardingData, setOnboardingData] = useState<OnboardingData>({
     salesChannels: [],
     inventoryTracking: "",
-    bundledProducts: "",
     shippingLocation: "",
     quickBooks: "",
     productImport: "",
   });
 
-  const totalSteps = 7;
+  const totalSteps = 6;
   const progress = (currentStep / totalSteps) * 100;
 
   const nextStep = () => {
@@ -76,7 +74,7 @@ const OnboardingFlow = () => {
         );
       case 3:
         return (
-          <BundledProductsStep
+          <ShippingLocationStep
             data={onboardingData}
             updateData={updateData}
             onNext={nextStep}
@@ -85,7 +83,7 @@ const OnboardingFlow = () => {
         );
       case 4:
         return (
-          <ShippingLocationStep
+          <QuickBooksStep
             data={onboardingData}
             updateData={updateData}
             onNext={nextStep}
@@ -94,15 +92,6 @@ const OnboardingFlow = () => {
         );
       case 5:
         return (
-          <QuickBooksStep
-            data={onboardingData}
-            updateData={updateData}
-            onNext={nextStep}
-            onPrev={prevStep}
-          />
-        );
-      case 6:
-        return (
           <ProductImportStep
             data={onboardingData}
             updateData={updateData}
@@ -110,7 +99,7 @@ const OnboardingFlow = () => {
             onPrev={prevStep}
           />
         );
-      case 7:
+      case 6:
         return <OnboardingComplete data={onboardingData} />;
       default:
         return <WelcomeStep onNext={nextStep} />;
