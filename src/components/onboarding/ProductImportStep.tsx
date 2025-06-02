@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Upload, Zap, Check, FileText, HelpCircle } from "lucide-react";
+import { ArrowRight, ArrowLeft, Upload, Zap, Check, FileText, HelpCircle, Package } from "lucide-react";
 import { OnboardingData } from "../OnboardingFlow";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -45,18 +45,24 @@ const ProductImportStep = ({ data, updateData, onNext, onPrev }: ProductImportSt
         
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-slate-900">
-            {importMethod === "csv" ? "Products Imported Successfully!" : "QuickBooks Connected!"}
+            {importMethod === "csv" ? "Products Imported Successfully!" : 
+             importMethod === "quickbooks" ? "QuickBooks Connected!" : 
+             "Sample Data Loaded!"}
           </h2>
           <p className="text-slate-600">
             {importMethod === "csv" 
               ? "Your product catalog is now loaded and ready to sync across channels."
-              : "Your QuickBooks inventory data is now syncing automatically."
+              : importMethod === "quickbooks"
+              ? "Your QuickBooks inventory data is now syncing automatically."
+              : "You're all set with sample products to explore the system."
             }
           </p>
         </div>
 
         <div className="bg-slate-50 rounded-lg p-4">
-          <h3 className="font-semibold text-slate-900 mb-3">Preview of imported products:</h3>
+          <h3 className="font-semibold text-slate-900 mb-3">
+            {importMethod === "sample" ? "Sample products loaded:" : "Preview of imported products:"}
+          </h3>
           <div className="space-y-2">
             {sampleProducts.map((product, index) => (
               <div key={index} className="flex justify-between items-center text-sm">
@@ -92,7 +98,7 @@ const ProductImportStep = ({ data, updateData, onNext, onPrev }: ProductImportSt
         <p className="text-slate-600">Choose the method that works best for you. You can always add more products later.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div 
           className="border border-slate-200 rounded-lg p-6 cursor-pointer transition-all hover:border-blue-300 hover:bg-blue-50/30"
           onClick={() => handleMethodSelect("csv")}
@@ -144,6 +150,35 @@ const ProductImportStep = ({ data, updateData, onNext, onPrev }: ProductImportSt
                   </TooltipTrigger>
                   <TooltipContent>
                     <p className="text-xs">Requires QuickBooks Online with inventory tracking enabled</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          className="border border-slate-200 rounded-lg p-6 cursor-pointer transition-all hover:border-purple-300 hover:bg-purple-50/30"
+          onClick={() => handleMethodSelect("sample")}
+        >
+          <div className="text-center space-y-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
+              <Package className="w-6 h-6 text-purple-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 mb-2">Start with Sample Data</h3>
+              <p className="text-sm text-slate-600">Explore the system with pre-loaded sample products. Perfect for getting started quickly.</p>
+            </div>
+            <div className="flex items-center justify-center space-x-1 text-xs text-slate-500">
+              <Package className="w-3 h-3" />
+              <span>Ready to explore immediately</span>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <HelpCircle className="w-3 h-3" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-xs">Includes sample SKUs, names, and quantities<br/>You can replace with real data anytime</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
