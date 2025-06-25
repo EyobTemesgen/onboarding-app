@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Upload, Zap, Check, FileText, HelpCircle, Package } from "lucide-react";
@@ -29,11 +28,6 @@ const ProductImportStep = ({ data, updateData, onNext, onPrev }: ProductImportSt
     setTimeout(() => {
       setShowSuccess(true);
     }, 1500);
-  };
-
-  const handleSkip = () => {
-    updateData("productImport", "skipped");
-    onNext();
   };
 
   if (showSuccess) {
@@ -185,15 +179,6 @@ const ProductImportStep = ({ data, updateData, onNext, onPrev }: ProductImportSt
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="text-center">
-        <button 
-          onClick={handleSkip}
-          className="text-slate-500 hover:text-slate-700 text-sm underline"
-        >
-          Skip for now – I'll add products later
-        </button>
       </div>
 
       <div className="flex justify-between pt-4">
