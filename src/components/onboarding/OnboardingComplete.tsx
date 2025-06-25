@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, ArrowRight, Star, Zap, Target } from "lucide-react";
@@ -10,7 +9,7 @@ interface OnboardingCompleteProps {
 
 const OnboardingComplete = ({ data }: OnboardingCompleteProps) => {
   const getPersonalizedMessage = () => {
-    const { salesChannels, inventoryTracking, bundledProducts, shippingLocation, quickBooks } = data;
+    const { salesChannels, inventoryTracking, shippingLocation, quickBooks } = data;
     
     let features = [];
     
@@ -22,9 +21,6 @@ const OnboardingComplete = ({ data }: OnboardingCompleteProps) => {
     }
     if (salesChannels.includes("b2b")) {
       features.push("B2B workflow automation");
-    }
-    if (bundledProducts === "yes") {
-      features.push("advanced kitting features");
     }
     if (quickBooks === "online") {
       features.push("seamless QuickBooks Online sync");
