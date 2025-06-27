@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, LinearProgress, Box, Typography } from '@mui/material';
 import SalesChannelStep from "../steps/SalesChannel";
 import LandingPage from "../steps/LandingPage/index";
@@ -8,9 +8,12 @@ import OnboardingComplete from "../steps/OnboardingComplete";
 import ShippingLocationStep from "../steps/ShippingLocation";
 import ProductImportStep from "../steps/ProductImport";
 import { OnboardingData } from "./types";
+import { useSearchParams } from "react-router-dom";
 
 const OnboardingFlow = () => {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const stepParam = parseInt(searchParams.get("step") || "0", 10);
+  const [currentStep, setCurrentStep] = useState(isNaN(stepParam) ? 0 : stepParam);
   const [onboardingData, setOnboardingData] = useState<OnboardingData>({
     salesChannels: [],
     inventoryTracking: "",
@@ -21,6 +24,22 @@ const OnboardingFlow = () => {
 
   const totalSteps = 6;
   const progress = (currentStep / totalSteps) * 100;
+
+  useEffect(() => {
+    // If the URL step param changes, update the state
+    if (!isNaN(stepParam) && stepParam !== currentStep) {
+      setCurrentStep(stepParam);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stepParam]);
+
+  useEffect(() => {
+    // When currentStep changes, update the URL param
+    if (currentStep !== stepParam) {
+      setSearchParams({ step: String(currentStep) });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStep]);
 
   const nextStep = () => {
     if (currentStep < totalSteps) {
