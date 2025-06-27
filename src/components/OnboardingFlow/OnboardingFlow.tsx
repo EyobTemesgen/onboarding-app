@@ -122,7 +122,15 @@ const OnboardingFlow = () => {
             <LinearProgress 
               variant="determinate" 
               value={progress} 
-              sx={{ height: 8, borderRadius: 4 }}
+              sx={{ 
+                height: 8, 
+                borderRadius: 4, 
+                backgroundColor: '#F5F7FA',
+                '& .MuiLinearProgress-bar': {
+                  backgroundColor: '#181F2B',
+                  borderRadius: 4,
+                },
+              }}
             />
           </Box>
         )}
