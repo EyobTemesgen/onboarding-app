@@ -123,21 +123,17 @@ const QuickBooksStep = ({ data, updateData, onNext, onPrev }: QuickBooksStepProp
                   key={option.id}
                   elevation={0}
                   sx={{
-                    border: isSelected ? 2 : 1,
-                    borderColor: isSelected ? 'primary.main' : 'grey.300',
+                    border: 1,
+                    borderColor: option.highlight ? '#10b981' : (isSelected ? 'primary.main' : 'grey.300'),
                     borderRadius: 2,
                     p: 2.5,
                     cursor: 'pointer',
-                    transition: 'all 0.2s',
+                    transition: 'border-color 0.2s, background-color 0.2s',
                     bgcolor: isSelected ? 'primary.50' : 'transparent',
                     position: 'relative',
                     '&:hover': {
                       bgcolor: isSelected ? 'primary.100' : 'grey.50',
                     },
-                    ...(option.highlight && {
-                      borderColor: '#10b981', // green-500
-                      borderWidth: 2,
-                    }),
                   }}
                   onClick={() => handleSelect(option.id)}
                 >

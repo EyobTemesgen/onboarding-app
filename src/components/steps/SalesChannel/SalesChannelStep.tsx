@@ -40,12 +40,12 @@ const SalesChannelStep = ({ data, updateData, onNext, onPrev }: SalesChannelStep
             key={option.id}
             elevation={0}
             sx={{
-              border: data.salesChannels.includes(option.id) ? 2 : 1,
+              border: 1,
               borderColor: data.salesChannels.includes(option.id) ? 'primary.main' : 'grey.300',
               borderRadius: 2,
               p: 2,
               cursor: 'pointer',
-              transition: 'all 0.2s',
+              transition: 'border-color 0.2s, background-color 0.2s',
               bgcolor: data.salesChannels.includes(option.id) ? 'primary.50' : 'transparent',
               '&:hover': {
                 bgcolor: data.salesChannels.includes(option.id) ? 'primary.100' : 'grey.50',

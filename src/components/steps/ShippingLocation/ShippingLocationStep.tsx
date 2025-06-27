@@ -82,12 +82,12 @@ const ShippingLocationStep = ({ data, updateData, onNext, onPrev }: ShippingLoca
               key={option.id}
                 elevation={0}
                 sx={{
-                  border: isSelected ? 2 : 1,
+                  border: 1,
                   borderColor: isSelected ? 'primary.main' : 'grey.300',
                   borderRadius: 2,
                   p: 2.5,
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'border-color 0.2s, background-color 0.2s',
                   bgcolor: isSelected ? 'primary.50' : 'transparent',
                   '&:hover': {
                     bgcolor: isSelected ? 'primary.100' : 'grey.50',
