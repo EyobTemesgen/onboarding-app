@@ -1,53 +1,87 @@
-# Welcome to your Lovable project
+# QuickBooks Onboarding Flow
 
-## Project info
+A modern React application for managing the QuickBooks integration onboarding process.
 
-**URL**: https://lovable.dev/projects/72511367-7e77-4d1b-bd95-89d6ca888a00
+## 🚀 Features
 
-## How can I edit this code?
+- Multi-step onboarding flow
+- Responsive design with Material-UI
+- TypeScript for type safety
+- React Query for data fetching and state management
+- Environment-based configuration
 
-There are several ways of editing your application.
+## 📁 Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/72511367-7e77-4d1b-bd95-89d6ca888a00) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/         # Reusable UI components
+│   └── OnboardingFlow/ # Onboarding flow components
+├── constants/          # Application constants
+├── environments/       # Environment configurations
+├── hooks/              # Custom React hooks
+├── services/           # API services and data fetching
+├── theme/              # MUI theme configuration
+├── types/              # TypeScript type definitions
+└── utils/              # Utility functions
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js (v16 or higher)
+- npm (v8 or higher) or yarn
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
+### Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd onboarding-flow
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open in browser**
+   The application will be available at `http://localhost:5173`
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+## 📦 Environment Variables
+
+Create `.env` files in the root directory for different environments:
+- `.env.development` - Development environment
+- `.env.production` - Production environment
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?
@@ -57,8 +91,7 @@ This project is built with:
 - Vite
 - TypeScript
 - React
-- shadcn-ui
-- Tailwind CSS
+- Material-UI (MUI)
 
 ## How can I deploy this project?
 
